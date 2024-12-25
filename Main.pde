@@ -20,11 +20,13 @@ void setup() {
   offsetY = (height - (row - 1) * spacing) / 2;
   radius = 5; 
   particle = new ArrayList<Particle>(); 
-  int fixed = 9; 
+  //Should make an array of fixed points you want 
+  //int[] fixed = {0,9}; 
   
   for (int y = 0; y < row; y++){
     for (int x = 0; x < column; x++){
-      if(x == 0 && y == 0 || x == fixed && y == 0){
+      //I'm lazy and just want these two points 
+      if(x == 0 && y == 0 || x == 9 && y == 0){
         particle.add(new Particle(x*spacing + offsetX, y*spacing + offsetY, radius));
       }else{
         particle.add(new Particle(x*spacing + offsetX, y*spacing + offsetY-5, radius));
